@@ -12,7 +12,7 @@ import com.coroutine.databinding.AdapterMovieBinding
 import com.coroutine.pojo.Result
 import com.coroutine.ui.news.detailscreen.MovieDetailsActivity
 
-class MoviesAdapter() : RecyclerView.Adapter<MainViewHolder>() {
+class MoviesAdapter() : RecyclerView.Adapter<MoviesAdapter.MainViewHolder>() {
 
     private var context: Context?= null
     private var movieList = mutableListOf<Result>()
@@ -48,6 +48,7 @@ class MoviesAdapter() : RecyclerView.Adapter<MainViewHolder>() {
     override fun getItemCount(): Int {
         return movieList.size
     }
+
+    class MainViewHolder(val binding: AdapterMovieBinding) : RecyclerView.ViewHolder(binding.root) {}
 }
 
-class MainViewHolder(val binding: AdapterMovieBinding) : RecyclerView.ViewHolder(binding.root) {}

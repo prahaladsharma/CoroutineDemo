@@ -37,7 +37,9 @@ class MovieActivity : AppCompatActivity() {
     private fun setupObserver() {
         if (SystemUtils.isNetworkConnected(this)) {
             binding.progressBar.visibility = View.VISIBLE
-            viewModel.getAllMovies(offset, order)
+            if(offset != null && (order.length>0 && order.isNotEmpty())) {
+                viewModel.getAllMovies(offset, order)
+            }
         } else{
             Toast.makeText(this, "Please check internet connection!!!", Toast.LENGTH_LONG).show()
         }

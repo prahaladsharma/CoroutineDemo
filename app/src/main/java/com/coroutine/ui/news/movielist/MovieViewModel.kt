@@ -1,12 +1,17 @@
 package com.coroutine.ui.news.movielist
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.coroutine.pojo.MovieReviews
+import com.coroutine.repository.DefaultMovieRepository
 import com.coroutine.repository.MovieRepository
 import kotlinx.coroutines.*
 
-class MovieViewModel constructor(private val mainRepository: MovieRepository) : ViewModel() {
+
+class MovieViewModel @ViewModelInject constructor(
+    private val mainRepository: DefaultMovieRepository
+    ) : ViewModel() {
 
     val errorMessage = MutableLiveData<String>()
     val movieList = MutableLiveData<MovieReviews>()
