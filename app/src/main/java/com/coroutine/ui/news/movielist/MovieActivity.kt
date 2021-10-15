@@ -41,7 +41,7 @@ class MovieActivity : AppCompatActivity() {
                 viewModel.getAllMovies(offset, order)
             }
         } else{
-            Toast.makeText(this, "Please check internet connection!!!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Please check internet connection!!!!", Toast.LENGTH_LONG).show()
         }
 
         viewModel.movieList.observe(this, {
